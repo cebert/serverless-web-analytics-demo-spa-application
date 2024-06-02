@@ -1,0 +1,21 @@
+<div class="main-container">
+   <mat-toolbar color="primary">
+      <mat-toolbar-row>
+         <span>{{ title }}</span>
+      </mat-toolbar-row>
+      <mat-toolbar-row class="justify-content-start">
+         <a mat-button routerLink="/home">Home</a>
+       </mat-toolbar-row>
+       <mat-toolbar-row class="justify-content-start">
+         <a mat-button routerLink="/event-tracking">Event Tracking</a>
+       </mat-toolbar-row>
+   </mat-toolbar>
+
+   <div class="content">
+      <router-outlet></router-outlet>
+   </div>
+
+   <mat-toolbar color="accent" class="footer">
+      <p>AWS Community Day | Columbus, OH | 2024. All builders rock!</p>
+   </mat-toolbar>
+</div>

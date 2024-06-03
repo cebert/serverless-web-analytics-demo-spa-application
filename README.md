@@ -1,27 +1,99 @@
-# ServerlessWebAnalyticsDemoSpaApplication
+# Serverless Web Analytics Demo SPA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+This repository is a demonstration of using the Serverless Website Analytics Client SDK in an Angular Single Page Application (SPA) to ingest analytical events. The demo is designed for the AWS Midwest Community Day 2024 in Columbus, Ohio.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The Serverless Website Analytics Client SDK allows developers to integrate website analytics into their applications without managing any infrastructure. This project showcases how to use the SDK in an Angular application to track and analyze user interactions.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Track page views and user interactions
+- Seamless integration with Angular Router for route change tracking
+- Event tracking for custom user actions
+- Integrates with Serverless Website Analytics
 
-## Build
+## Setup and Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+- Node.js and npm installed
+- Angular CLI installed
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/serverless-web-analytics-demo-spa.git
+   cd serverless-web-analytics-demo-spa
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Further help
+### Configuration
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Open `src/app/services/analytics.service.ts` and update the configuration with your site details:
+   ```typescript
+   swaClient.v1.analyticsPageInit({
+     inBrowser: true,
+     site: 'aws-midwest-community-day',
+     apiUrl: 'https://web-analytics.ebertlabs.com',
+   });
+   ```
+
+### Running the Application
+
+1. Start the development server:
+   ```bash
+   ng serve
+   ```
+
+2. Open your browser and navigate to `http://localhost:4200`.
+
+## Usage
+
+The application automatically tracks page views and user interactions. You can add custom event tracking in your Angular components by injecting the `AnalyticsService` and calling the `trackEvent` method.
+
+### Example
+
+**src/app/some-component/some-component.component.ts**:
+```typescript
+
+@Component({
+  selector: 'app-some-component',
+  templateUrl: './some-component.component.html',
+  styleUrls: ['./some-component.component.css'],
+})
+export class SomeComponent {
+  constructor(private analyticsService: AnalyticsService) {}
+
+  trackEvent(): void {
+    this.analyticsService.trackEvent('event-name', 1, 'event-category');
+  }
+}
+```
+
+**src/app/some-component/some-component.component.html**:
+```html
+<button (click)="trackEvent()">Track Event</button>
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [Serverless Website Analytics Client SDK](https://github.com/rehanvdm/serverless-website-analytics-client)
+- [Serverless Website Analytics Backend](https://github.com/rehanvdm/serverless-website-analytics)
+
+## Contact
+
+For any inquiries or feedback, please contact [chris@chrisebert.net].

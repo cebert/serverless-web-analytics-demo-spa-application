@@ -1,0 +1,73 @@
+<mat-card>
+   <mat-card-header>
+      <mat-card-title
+         >Welcome to the Serverless Website Analytics Demo</mat-card-title
+      >
+      <mat-card-subtitle
+         >AWS Community Day 2024, Columbus, Ohio</mat-card-subtitle
+      >
+   </mat-card-header>
+   <mat-card-content>
+      <p>
+         This is a simple Angular SPA application that uses utilizes Serverless
+         Website Analytics SDK Client to ingest logs into Serverless Website
+         Analytics.
+      </p>
+      <p>
+         Using the SDK Client is not strictly necessary. You can ingest data
+         into Serverless Website Analytics one of the following ways:
+      </p>
+
+      <ol>
+         <li>Import Script</li>
+         <ul>
+            <li>
+               Add an import script to the site's HTML load ingestion code.
+            </li>
+            <li>
+               When the attribute tracking option is enabled, only buttons and
+               links with the <code>swa-event</code> attribute are tracked.
+            </li>
+         </ul>
+         <li>SDK Client</li>
+         <ul>
+            <li>
+               Import SDK Client package for more control over event
+               publication. This approach works better for SPA applications with
+               complex routing.
+            </li>
+         </ul>
+      </ol>
+      <h2>What is Serverless Analytics?</h2>
+      <p>
+         Serverless analytics is a method of collecting and analyzing data
+         without managing any infrastructure. It leverages serverless
+         technologies such as AWS Lambda, API Gateway, and DynamoDB to provide
+         scalable, cost-effective analytics solutions. This approach allows
+         developers to focus on building features rather than managing servers.
+      </p>
+      <h3>Useful Links:</h3>
+      <ul>
+         <li>
+            <a
+               href="https://github.com/rehanvdm/serverless-website-analytics-client"
+               target="_blank"
+            >
+               Serverless Website Analytics Client SDK
+            </a>
+            - A JavaScript library to integrate serverless analytics into web
+            applications.
+         </li>
+         <li>
+            <a
+               href="https://github.com/rehanvdm/serverless-website-analytics"
+               target="_blank"
+            >
+               Serverless Website Analytics
+            </a>
+            - A backend solution using AWS services to collect, process, and
+            store analytics data.
+         </li>
+      </ul>
+   </mat-card-content>
+</mat-card>

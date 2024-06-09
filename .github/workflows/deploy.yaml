@@ -31,24 +31,30 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_DEPLOY_TOKEN }}@github.com/${{ github.repository }}
-          
-          # Fetch the gh-pages branch
+
+          echo "Fetching gh-pages branch..."
           git fetch origin gh-pages || echo "gh-pages branch does not exist. Creating a new one."
-          
-          # Check if the gh-pages branch exists, and checkout or create it
+
+          echo "Checking out gh-pages branch..."
           if git show-ref --quiet refs/remotes/origin/gh-pages; then
             git checkout gh-pages
           else
             git checkout --orphan gh-pages
           fi
-          
-          # Clean up the old contents
-          git rm -rf .
 
-          # Copy the new build output
+          echo "Cleaning up old contents..."
+          git rm -rf . || true
+
+          echo "Copying new build output..."
           cp -r dist/* .
-          
-          # Add and commit the new build output
+
+          echo "Staging new changes..."
           git add .
+
+          echo "Committing changes..."
           git commit -m "Deploy to GitHub Pages"
+
+          echo "Pushing to gh-pages branch..."
           git push origin gh-pages --force
+
+          echo "Deployment completed."

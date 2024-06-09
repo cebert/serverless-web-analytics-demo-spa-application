@@ -32,16 +32,23 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_DEPLOY_TOKEN }}@github.com/${{ github.repository }}
           
-          git fetch origin gh-pages
+          # Debugging: Print the current remote configuration
+          git remote -v
           
+          # Fetch the gh-pages branch
+          git fetch origin gh-pages || echo "gh-pages branch does not exist. Creating a new one."
+          
+          # Check if the gh-pages branch exists, and checkout or create it
           if git show-ref --quiet refs/remotes/origin/gh-pages; then
             git checkout gh-pages
           else
             git checkout --orphan gh-pages
           fi
           
+          # Clean up the old contents
           git rm -rf .
-
+          
+          # Add the new build output
           cp -r dist/* .
           git add .
           git commit -m "Deploy to GitHub Pages"

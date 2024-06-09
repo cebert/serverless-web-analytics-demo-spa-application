@@ -36,7 +36,7 @@
             "ssr": {
               "entry": "server.ts"
             },
-            "baseHref": "/"
+            "baseHref": "/serverless-web-analytics-demo-spa-application/"
           },
           "configurations": {
             "production": {

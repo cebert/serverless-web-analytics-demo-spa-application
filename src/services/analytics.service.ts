@@ -1,10 +1,14 @@
-import * as swaClient from 'serverless-website-analytics-client';
-import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import * as swaClient from "serverless-website-analytics-client";
+import { isPlatformBrowser } from "@angular/common";
+import { Inject, Injectable, PLATFORM_ID } from "@angular/core";
 
 @Injectable({
    providedIn: 'root',
 })
+
+/**
+ * 
+ */
 export class AnalyticsService {
    private static initialized = false;
 

@@ -28,23 +28,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
         run: |
+          set -e
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_DEPLOY_TOKEN }}@github.com/${{ github.repository }}
-
+          
           echo "Fetching gh-pages branch..."
-          git fetch origin gh-pages || echo "gh-pages branch does not exist. Creating a new one."
-
-          echo "Checking out gh-pages branch..."
-          if git show-ref --quiet refs/remotes/origin/gh-pages; then
+          if git fetch origin gh-pages; then
+            echo "gh-pages branch exists, checking it out..."
             git checkout gh-pages
           else
+            echo "gh-pages branch does not exist, creating it..."
             git checkout --orphan gh-pages
           fi
-
+          
           echo "Cleaning up old contents..."
           git rm -rf . || true
-
+          
           echo "Copying new build output..."
           cp -r dist/* .
 

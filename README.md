@@ -1,10 +1,14 @@
 # Serverless Web Analytics Demo SPA
 
-This repository is a demonstration of using the Serverless Website Analytics Client SDK in an Angular Single Page Application (SPA) to ingest analytical events. The demo is designed for the AWS Midwest Community Day 2024 in Columbus, Ohio.
+This repository demonstrates how to use the [Serverless Website Analytics Client SDK](https://github.com/rehanvdm/serverless-website-analytics-client#usage) in an Angular Single Page Application (SPA) to ingest analytical events. The demo is designed for the AWS Midwest Community Day 2024 in Columbus, Ohio. An instance of SWA
+was deployed using the code in the example [Serverless Website Analytics Deployment Demo](https://github.com/cebert/serverless-web-analytics-demo-deployment)
+
+- You can view this simple SPA application on GitHub Pages [here](https://cebert.github.io/serverless-web-analytics-demo-spa-application/).
+- You can view analytics for this SPA application (at least during the Community Day Event) at [here](https://web-analytics.ebertlabs.com/).
 
 ## Overview
 
-The Serverless Website Analytics Client SDK allows developers to integrate website analytics into their applications without managing any infrastructure. This project showcases how to use the SDK in an Angular application to track and analyze user interactions.
+The [Serverless Website Analytics Client SDK](https://github.com/rehanvdm/serverless-website-analytics-client#usage) allows developers to integrate website analytics into their applications without managing any infrastructure. This project showcases how to use the SDK in an Angular application to track and analyze user interactions.
 
 ## Features
 
@@ -43,6 +47,8 @@ The Serverless Website Analytics Client SDK allows developers to integrate websi
      apiUrl: 'https://web-analytics.ebertlabs.com',
    });
    ```
+- `site` should match the name of an allowed site for a deployed instance of [Serverless Website Analytics](https://github.com/rehanvdm/serverless-website-analytics)
+- `apiUrl` should match to the base url for a deployed instance of [Serverless Website Analytics](https://github.com/rehanvdm/serverless-website-analytics)
 
 ### Running the Application
 
@@ -83,7 +89,8 @@ export class SomeComponent {
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes. I do 
+not plan on actively maintaining this sample SPA application after AWS Community Day 2024, so feel free to fork it.
 
 ## License
 

@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
@@ -19,42 +19,13 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the Angular app
-        run: node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build --configuration production --output-path=dist
+        run: npm run build -- --output-path=dist
 
       - name: Deploy to GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
-        run: |
-          set -e
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_DEPLOY_TOKEN }}@github.com/${{ github.repository }}
-          
-          echo "Fetching gh-pages branch..."
-          if git fetch origin gh-pages; then
-            echo "gh-pages branch exists, checking it out..."
-            git checkout gh-pages
-          else
-            echo "gh-pages branch does not exist, creating it..."
-            git checkout --orphan gh-pages
-          fi
-          
-          echo "Cleaning up old contents..."
-          git rm -rf . || true
-          
-          echo "Copying new build output..."
-          cp -r dist/* .
-
-          echo "Staging new changes..."
-          git add .
-
-          echo "Committing changes..."
-          git commit -m "Deploy to GitHub Pages"
-
-          echo "Pushing to gh-pages branch..."
-          git push origin gh-pages --force
-
-          echo "Deployment completed."
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}

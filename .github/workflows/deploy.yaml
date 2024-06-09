@@ -28,5 +28,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/serverless-web-analytics-demo-spa-application
+          folder: dist/serverless-web-analytics-demo-spa-application/browser
           token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}

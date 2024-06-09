@@ -1,6 +1,6 @@
-import * as swaClient from "serverless-website-analytics-client";
-import { isPlatformBrowser } from "@angular/common";
-import { Inject, Injectable, PLATFORM_ID } from "@angular/core";
+import * as swaClient from 'serverless-website-analytics-client';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
 @Injectable({
    providedIn: 'root',
@@ -29,9 +29,9 @@ export class AnalyticsService {
    }
 
    /**
-   * Tracks a page change in the analytics client.
-   * @param newRoute - The new route or URL to be tracked.
-   */
+    * Tracks a page change in the analytics client.
+    * @param newRoute - The new route or URL to be tracked.
+    */
    trackPageChange(newRoute: string): void {
       if (isPlatformBrowser(this.platformId)) {
          swaClient.v1.analyticsPageChange(newRoute);
@@ -39,11 +39,11 @@ export class AnalyticsService {
    }
 
    /**
-   * Tracks a custom event in the analytics client.
-   * @param eventName - The name of the event to be tracked.
-   * @param value - The value associated with the event.
-   * @param category - The category of the event.
-   */
+    * Tracks a custom event in the analytics client.
+    * @param eventName - The name of the event to be tracked.
+    * @param value - The value associated with the event.
+    * @param category - The category of the event.
+    */
    trackEvent(eventName: string, value: number, category: string): void {
       if (isPlatformBrowser(this.platformId)) {
          swaClient.v1.analyticsTrack(eventName, value, category);

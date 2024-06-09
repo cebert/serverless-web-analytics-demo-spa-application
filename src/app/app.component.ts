@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { MatButtonModule } from "@angular/material/button";
-import { MatIconModule } from "@angular/material/icon";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { RouterOutlet } from "@angular/router";
-import { NavigationEnd, Router } from "@angular/router";
-import { AnalyticsService } from "../services/analytics.service";
+import { Component, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { AnalyticsService } from '../services/analytics.service';
 
 @Component({
    selector: 'app-root',

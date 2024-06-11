@@ -4,12 +4,12 @@ import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 
 @Component({
-   selector: 'app-home',
+   selector: 'app-about',
    standalone: true,
-   templateUrl: './home.component.html',
-   styleUrls: ['./home.component.scss'],
+   templateUrl: './about.component.html',
+   styleUrl: './about.component.css',
    imports: [CommonModule, MatCardModule],
 })
-export class HomeComponent {
+export class AboutComponent {
    constructor(private router: Router) {}
 }

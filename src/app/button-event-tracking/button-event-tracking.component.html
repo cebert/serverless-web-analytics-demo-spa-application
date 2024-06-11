@@ -12,9 +12,9 @@
         The AWS Firehouse Buffer for event ingestion is set at 120 seconds. This means it will take at least two minutes for the events your session generated to be visible on the SWA Dashboard.
       </p>
       <div class="vertical-buttons">
-        <button mat-raised-button color="primary" (click)="handleClick('Button1Clicked', $event)">Click Button 1</button>
-        <button mat-raised-button color="accent" (click)="handleClick('Button2Clicked', $event)">Click Button 2</button>
-        <button mat-raised-button color="warn" (click)="handleClick('Button3Clicked', $event)">Click Button 3</button>
+        <button mat-raised-button color="primary" (click)="trackEvent('Button1Clicked')">Click Button 1</button>
+        <button mat-raised-button color="accent" (click)="trackEvent('Button2Clicked')">Click Button 2</button>
+        <button mat-raised-button color="warn" (click)="trackEvent('Button3Clicked')">Click Button 3</button>
       </div>
     </mat-card-content>
   </mat-card>  

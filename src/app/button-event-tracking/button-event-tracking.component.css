@@ -89,8 +89,3 @@ button {
     padding: 10px;
     font-size: 16px;
 }
-
-.clicked {
-   background-color: #ccc !important;
-   transition: background-color 0.3s;
- }

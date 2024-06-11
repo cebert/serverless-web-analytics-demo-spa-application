@@ -89,8 +89,7 @@ export class SomeComponent {
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes. I do 
-not plan on actively maintaining this sample SPA application after AWS Community Day 2024, so feel free to fork it.
+I do not plan on actively maintaining this sample SPA application after AWS Community Day 2024, so feel free to fork it.
 
 ## License
 

@@ -89,8 +89,13 @@ button {
     padding: 10px;
     font-size: 16px;
 }
+<<<<<<< HEAD
 
 .clicked {
    background-color: #ccc !important;
    transition: background-color 0.3s;
  }
+=======
+  
+ 
+>>>>>>> bddc240506b625437ffee850f4f1ed8c27fef94a

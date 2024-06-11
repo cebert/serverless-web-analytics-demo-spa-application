@@ -8,6 +8,9 @@
         This component demonstrates tracking button click events using the Serverless Website Analytics SDK. You
         will be able to view these click events from the <a href="https://web-analytics.ebertlabs.com" target="_blank"> Serverless Website Analytics Dashboard</a> by filtering on the site called <b><i>"aws-midwest-community-day"</i></b>.
       </p>
+      <p>
+        The AWS Firehouse Buffer for event ingestion is set at 120 seconds. This means it will take at least two minutes for the events your session generated to be visible on the SWA Dashboard.
+      </p>
       <div class="vertical-buttons">
         <button mat-raised-button color="primary" (click)="handleClick('Button1Clicked', $event)">Click Button 1</button>
         <button mat-raised-button color="accent" (click)="handleClick('Button2Clicked', $event)">Click Button 2</button>

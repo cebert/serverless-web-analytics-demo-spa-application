@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { Router } from '@angular/router';
-import { AnalyticsService } from '../../services/analytics.service';
+import { CommonModule } from "@angular/common";
+import { Component } from "@angular/core";
+import { MatCardModule } from "@angular/material/card";
+import { Router } from "@angular/router";
+import { AnalyticsService } from "../../services/analytics.service";
 
 @Component({
    selector: 'app-button-event-tracking',
@@ -18,7 +18,7 @@ export class ButtonEventTrackingComponent {
    ) {}
 
    trackEvent(eventName: string) {
-      this.analyticsService.trackEvent(eventName, 1, 'button-click');
+      this.analyticsService.trackEvent(eventName, 1, 'events-page');
       console.log(`Event ${eventName} tracked.`);
    }
 }

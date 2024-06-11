@@ -18,4 +18,16 @@ export class ButtonEventTrackingComponent {
     this.analyticsService.trackEvent(eventName, 1, 'button-click');
     console.log(`Event ${eventName} tracked.`);
   }
+
+  handleClick(eventName: string, event: MouseEvent) {
+    const button = event.target as HTMLButtonElement;
+
+    // making it more obvious the button was clicked
+    button.classList.add('clicked');
+    this.trackEvent(eventName);
+
+    setTimeout(() => {
+      button.classList.remove('clicked');
+    }, 300);
+  }
 }

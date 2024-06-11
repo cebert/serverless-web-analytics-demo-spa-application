@@ -1,17 +1,17 @@
 <mat-card>
     <mat-card-header>
-       <mat-card-title>Event tracking</mat-card-title>
-       <mat-card-subtitle>Event tracking example</mat-card-subtitle>
+      <mat-card-title>Event tracking</mat-card-title>
+      <mat-card-subtitle>Event tracking example</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <p>
-            This component demonstrates tracking button click events using the Serverless Website Analytics SDK. You
-            will be able to view these slick events from the SWA dashboard.
-        </p>
-        <div>
-            <button mat-raised-button color="primary" (click)="trackEvent('Button1Clicked')">Click Button 1</button>
-            <button mat-raised-button color="accent" (click)="trackEvent('Button2Clicked')">Click Button 2</button>
-            <button mat-raised-button color="warn" (click)="trackEvent('Button3Clicked')">Click Button 3</button>
-        </div>
+      <p>
+        This component demonstrates tracking button click events using the Serverless Website Analytics SDK. You
+        will be able to view these click events from the SWA dashboard.
+      </p>
+      <div class="vertical-buttons">
+        <button mat-raised-button color="primary" (click)="handleClick('Button1Clicked', $event)">Click Button 1</button>
+        <button mat-raised-button color="accent" (click)="handleClick('Button2Clicked', $event)">Click Button 2</button>
+        <button mat-raised-button color="warn" (click)="handleClick('Button3Clicked', $event)">Click Button 3</button>
+      </div>
     </mat-card-content>
- </mat-card>
+  </mat-card>  

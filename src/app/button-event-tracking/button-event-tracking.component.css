@@ -1,93 +1,96 @@
 mat-card {
-    background-color: var(
-       --mat-card-background
-    ); /* Use CSS variable for background color */
-    margin: 20px;
-    padding: 20px;
- }
- 
- mat-card-title {
-    font-size: 24px;
-    font-weight: bold;
- }
- 
- mat-card-subtitle {
-    font-size: 16px;
-    color: gray;
- }
- 
- mat-card-content p {
-    font-size: 14px;
-    line-height: 1.6;
- }
- 
- mat-card-actions {
-    display: flex;
-    justify-content: flex-end;
- }
- 
- ul {
-    padding-left: 20px;
- }
- 
- ul li {
-    margin-bottom: 10px;
- }
- 
- mat-card h1 {
-    font-size: 24px;
-    font-weight: bold;
- }
- 
- mat-card h2 {
-    font-size: 20px;
-    font-weight: bold;
- }
- 
- mat-card h3 {
-    font-size: 18px;
-    font-weight: bold;
- }
- 
- /* Style for code snippets */
- pre {
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
- }
- 
- code {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    background-color: #f5f5f5;
-    padding: 2px 4px;
-    border-radius: 4px;
- }
- 
- /* Apply global styles to headers inside mat-cards */
- ::ng-deep mat-card h1 {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.2;
- }
- 
- ::ng-deep mat-card h2 {
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.2;
- }
- 
- ::ng-deep mat-card h3 {
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.2;
- }
+   background-color: var(
+      --mat-card-background
+   ); /* Use CSS variable for background color */
+   margin: 20px;
+   padding: 20px;
+}
 
- button {
+mat-card-title {
+   font-size: 24px;
+   font-weight: bold;
+}
+
+mat-card-subtitle {
+   font-size: 16px;
+   color: gray;
+}
+
+mat-card-content p {
+   font-size: 14px;
+   line-height: 1.6;
+}
+
+mat-card-actions {
+   display: flex;
+   justify-content: flex-end;
+}
+
+ul {
+   padding-left: 20px;
+}
+
+ul li {
+   margin-bottom: 10px;
+}
+
+mat-card h1 {
+   font-size: 24px;
+   font-weight: bold;
+}
+
+mat-card h2 {
+   font-size: 20px;
+   font-weight: bold;
+}
+
+mat-card h3 {
+   font-size: 18px;
+   font-weight: bold;
+}
+
+/* Style for code snippets */
+pre {
+   background-color: #f5f5f5;
+   padding: 10px;
+   border-radius: 5px;
+   overflow-x: auto;
+}
+
+code {
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 16px;
+   background-color: #f5f5f5;
+   padding: 2px 4px;
+   border-radius: 4px;
+}
+
+/* Apply global styles to headers inside mat-cards */
+::ng-deep mat-card h1 {
+   font-size: 24px;
+   font-weight: bold;
+   line-height: 1.2;
+}
+
+::ng-deep mat-card h2 {
+   font-size: 20px;
+   font-weight: bold;
+   line-height: 1.2;
+}
+
+::ng-deep mat-card h3 {
+   font-size: 18px;
+   font-weight: bold;
+   line-height: 1.2;
+}
+
+button {
     margin: 10px;
     padding: 10px;
     font-size: 16px;
 }
-  
- 
+
+.clicked {
+   background-color: #ccc !important;
+   transition: background-color 0.3s;
+ }
